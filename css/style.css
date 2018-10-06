@@ -1,0 +1,80 @@
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: #282c34;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+.App-header {
+    font-size: calc(16px + 2vmin);
+}
+
+.current-weather-container {
+    overflow: hidden;
+    height: 50%;
+    text-align: center;
+}
+
+.current-weather {
+    font-size: 100px;
+    height: 50px;
+}
+
+.day-weather-container {
+    border-top: 1px solid #ffffff3b;
+    border-bottom: 1px solid #ffffff3b;
+    width: 97%;
+    height: 150px;
+    margin-top: 75px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+.day-weather-container div {
+    text-align: center;
+}
+
+.day-weather-container p {
+    margin-top: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.sliding-background {
+    height: 500px;
+    width: 1260px;
+    background: url("/img/clouds4.png") no-repeat;
+    animation: slide 120s linear infinite;
+    top: 2%;    
+    position: absolute;
+    z-index: -1;
+    opacity: 0.3;
+}
+
+
+
+@keyframes slide {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+
+    100% {
+        transform: translate3d(-1260px, 0, 0); /* bildens width */
+    }
+}
+
