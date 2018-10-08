@@ -2,7 +2,6 @@ let currentWeather = document.getElementById("current-weather"),
     cityInput = document.getElementById("city-input"),
     city = document.getElementById("city"),
     status = document.getElementById("current-status"),
-    searchField = document.getElementById("search-field"),
     searchButton = document.getElementById("search-button"),
     toggleButton = document.getElementById("toggle-button");
 
