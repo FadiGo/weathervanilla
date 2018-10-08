@@ -31,8 +31,9 @@ function getWeather() {
 }
 
 function setCity() {
-    city.textContent = cityInput.value;
+    city.innerHTML = cityInput.value + `<button id="toggle-button" type="submit" onclick="toggleSearch()"><i class="fa fa-edit"></i></button>`;
     cityInput.style.display = "none";
+    cityInput.value = "";
     searchButton.style.display = "none";
     API_URL = "https://api.openweathermap.org/data/2.5/weather?q=" + city.textContent + "&APPID=0170d2dcc35f88f82226761ce0fe0d6a";
     getWeather();
