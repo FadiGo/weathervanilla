@@ -18,9 +18,10 @@ body {
     overflow: hidden;
     height: 50%;
     text-align: center;
+    margin-top: -50px;
 }
 
-.current-weather {
+#current-weather {
     font-size: 100px;
     height: 50px;
 }
