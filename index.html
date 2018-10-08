@@ -14,28 +14,30 @@
 </head>
 <body>
 
-    <!-- HEADER -->
-    <input id="search-field" type="text" id="city-input" placeholder="Search...">
-    <input id="search-button" type="submit" onclick="setCity()">
+    <div class="search-bar">
+        <input type="text" id="city-input" placeholder="Search...">
+        <button id="search-button" type="submit" onclick="setCity()"><i class="fa fa-search"></i></button>
+    </div>
 
+    <!-- HEADER -->
     <header class="App-header">
-        <p id="city">Stockholm</p>
+        <p id="city">Stockholm <button id="toggle-button" type="submit" onclick="toggleSearch()"><i class="fa fa-edit"></i></button></p>
     </header>
     <!-- HEADER -->
-
+    
 
     <!-- CURRENT WEATHER -->
     <div class="current-weather-container">
         <span class="sliding-background"></span>
         <p id="current-weather">0°</p>
-        <p id="current-status">Molnigt</p>
+        <p id="current-status">Cloudy</p>
     </div>
     <!-- CURRENT WEATHER -->
 
     <!-- WEATHER DURING THE DAY -->
     <div class="day-weather-container">
         <div>
-            <p>Nu</p>
+            <p>Now</p>
             <span class="mi mi-4x mi-cloud"></span>
             <p>11°</p>
         </div>

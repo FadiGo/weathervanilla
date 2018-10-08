@@ -1,15 +1,17 @@
-let currentWeather = document.getElementById("current-weather");
-let cityInput = document.getElementById("city-input");
-let city = document.getElementById("city");
-let status = document.getElementById("current-status");
+let currentWeather = document.getElementById("current-weather"),
+    cityInput = document.getElementById("city-input"),
+    city = document.getElementById("city"),
+    status = document.getElementById("current-status"),
+    searchField = document.getElementById("search-field"),
+    searchButton = document.getElementById("search-button"),
+    toggleButton = document.getElementById("toggle-button");
 
-// const API_URL = 'https://api.openweathermap.org/data/2.5/weather?q=stockholm,se&APPID=0170d2dcc35f88f82226761ce0fe0d6a';
 let API_URL = "https://api.openweathermap.org/data/2.5/weather?q=stockholm,se&APPID=0170d2dcc35f88f82226761ce0fe0d6a";
-
-
-
-
 getWeather();
+
+
+
+
 
 function getWeather() {
     fetch(API_URL).then(response => {
@@ -19,7 +21,7 @@ function getWeather() {
         throw new Error('Oops something went wrong: Network response was not ok.');
     })
         .then(response => {
-            console.log(response.weather[0].main);
+            // console.log(response);
             currentWeather.textContent = (response.main.temp - 273.15).toFixed(1) + "°";
             status.textContent = response.weather[0].main;
         })
@@ -30,6 +32,13 @@ function getWeather() {
 
 function setCity() {
     city.textContent = cityInput.value;
+    cityInput.style.display = "none";
+    searchButton.style.display = "none";
     API_URL = "https://api.openweathermap.org/data/2.5/weather?q=" + city.textContent + "&APPID=0170d2dcc35f88f82226761ce0fe0d6a";
     getWeather();
+}
+
+function toggleSearch() {
+    cityInput.style.display = "block";
+    searchButton.style.display = "block";
 }
