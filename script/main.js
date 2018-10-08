@@ -10,17 +10,24 @@ let API_URL = "https://api.openweathermap.org/data/2.5/weather?q=stockholm,se&AP
 
 getWeather();
 
-
 function getWeather() {
-    fetch(API_URL).then(function(response) {
-        response.text().then(function(weather) {
-            currentWeather.innerHTML = weather;
-            console.log(weather);
+
+    fetch(API_URL).then(response => {
+        if (response.ok) {
+            return response.json();
+        }
+        throw new Error('Oops something went wrong: Network response was not ok.');
+    })
+        .then(response => {
+            console.log(response.main);
+            currentWeather.textContent = (response.main.temp - 273.15).toFixed(1) + "°";
+        })
+        .catch(function (error) {
+            alert(error);
         });
-    });
 }
 
 function setCity() {
-    city.innerHTML = cityInput.value;
-    API_URL = "https://api.openweathermap.org/data/2.5/weather?q=" + city.innerHTML + "&APPID=0170d2dcc35f88f82226761ce0fe0d6a";
+    city.textContent = cityInput.value;
+    API_URL = "https://api.openweathermap.org/data/2.5/weather?q=" + city.textContent + "&APPID=0170d2dcc35f88f82226761ce0fe0d6a";
 }
