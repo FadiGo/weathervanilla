@@ -8,14 +8,15 @@
     <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="css/normalize.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="css/meteocons.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
     
 </head>
 <body>
 
     <!-- HEADER -->
-    <input type="text" id="city-input" value="Stockholm">
-    <button onclick="setCity()">sd</button>
+    <input id="search-field" type="text" id="city-input" placeholder="Search...">
+    <input id="search-button" type="submit" onclick="setCity()">
 
     <header class="App-header">
         <p id="city">Stockholm</p>
