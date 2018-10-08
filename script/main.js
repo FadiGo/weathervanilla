@@ -8,7 +8,12 @@ let currentWeather = document.getElementById("current-weather"),
 let API_URL = "https://api.openweathermap.org/data/2.5/weather?q=stockholm,se&APPID=0170d2dcc35f88f82226761ce0fe0d6a";
 getWeather();
 
-
+// allow user to hit enter when searching for a city. For PC users.
+cityInput.addEventListener('keypress', (key) => {
+    if (key.which === 13) {
+        setCity();
+    }
+})
 
 
 
