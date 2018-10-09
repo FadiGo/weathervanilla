@@ -56,6 +56,11 @@ body {
     transform: rotate(20deg);
 }
 
+#toggle-button:focus {
+    outline: 0;
+}
+
+
 .rotate {
     transition: all 0.5s ease;
 }
