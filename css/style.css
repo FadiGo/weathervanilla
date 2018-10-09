@@ -69,6 +69,10 @@ input[type="text"] {
     height: 20px;
     padding-right: 50px;
     display: none;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid #ffffff3b;
+    color: #fff;
 }
 
  input[type="text"]:focus {
@@ -82,7 +86,7 @@ input[type="text"] {
     width: 50px;
     border: 0;   
     background-color: transparent;
-    color: #000;
+    color: #fff;
     display: none;
 }
 
