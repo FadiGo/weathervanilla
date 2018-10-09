@@ -13,6 +13,13 @@ let dayWeather = [
     dayWeather5 = document.getElementById("day-weather-5")
 ];
 
+let dayTime = [
+    dayTime2 = document.getElementById("day-time-2"),
+    dayTime3 = document.getElementById("day-time-3"),
+    dayTime4 = document.getElementById("day-time-4"),
+    dayTime5 = document.getElementById("day-time-5")
+];
+
 let API_URL = "https://api.openweathermap.org/data/2.5/weather?q=stockholm,se&APPID=0170d2dcc35f88f82226761ce0fe0d6a";
 let API_FURL = "http://api.openweathermap.org/data/2.5/forecast?id=2673722&APPID=0170d2dcc35f88f82226761ce0fe0d6a";
 getWeather();
@@ -53,9 +60,10 @@ function getForecast() {
             throw new Error('Oops something went wrong: Network response was not ok.');
         })
         .then(response => {
-            console.log(response);            
-            for(var i = 1; i < 5; i++) {
+            console.log(response.list);            
+            for(var i = 0; i < 5; i++) {
                 dayWeather[i].textContent = (response.list[i].main.temp - 273.15).toFixed(1) + "°";
+                dayTime[i].textContent = response.list[i].dt_txt.slice(11, 16);
             }
         })
         .catch(function (error) {
