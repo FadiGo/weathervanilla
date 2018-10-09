@@ -5,8 +5,18 @@ let currentWeather = document.getElementById("current-weather"),
     searchButton = document.getElementById("search-button"),
     toggleButton = document.getElementById("toggle-button");
 
+let dayWeather = [
+    dayWeather1 = document.getElementById("day-weather-1"),
+    dayWeather2 = document.getElementById("day-weather-2"),
+    dayWeather3 = document.getElementById("day-weather-3"),
+    dayWeather4 = document.getElementById("day-weather-4"),
+    dayWeather5 = document.getElementById("day-weather-5")
+];
+
 let API_URL = "https://api.openweathermap.org/data/2.5/weather?q=stockholm,se&APPID=0170d2dcc35f88f82226761ce0fe0d6a";
+let API_FURL = "http://api.openweathermap.org/data/2.5/forecast?id=2673722&APPID=0170d2dcc35f88f82226761ce0fe0d6a";
 getWeather();
+getForecast();
 
 // allow user to hit enter when searching for a city. For PC users.
 cityInput.addEventListener('keypress', (key) => {
@@ -27,11 +37,31 @@ function getWeather() {
         .then(response => {
             // console.log(response);
             currentWeather.textContent = (response.main.temp - 273.15).toFixed(1) + "°";
+            dayWeather1.textContent = (response.main.temp - 273.15).toFixed(1) + "°";
             status.textContent = response.weather[0].main;
         })
         .catch(function (error) {
             console.log(error);
         });
+}
+
+function getForecast() {
+    fetch(API_FURL).then(response => {
+            if (response.ok) {
+                return response.json();
+            }
+            throw new Error('Oops something went wrong: Network response was not ok.');
+        })
+        .then(response => {
+            console.log(response);            
+            for(var i = 1; i < 5; i++) {
+                dayWeather[i].textContent = (response.list[i].main.temp - 273.15).toFixed(1) + "°";
+            }
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+
 }
 
 function setCity() {
