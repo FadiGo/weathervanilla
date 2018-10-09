@@ -46,4 +46,5 @@ function setCity() {
 function toggleSearch() {
     cityInput.style.display = "block";
     searchButton.style.display = "block";
+    cityInput.autofocus = true;
 }
