@@ -71,12 +71,13 @@ input[type="text"] {
     display: none;
     background: transparent;
     border: 0;
-    border-bottom: 1px solid #ffffff3b;
+    border-bottom: 1px solid #ffffff80;
     color: #fff;
 }
 
  input[type="text"]:focus {
     width: 150px;
+    outline: none;
 } 
 
 #search-button {
