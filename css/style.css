@@ -73,6 +73,7 @@ input[type="text"] {
     border: 0;
     border-bottom: 1px solid #ffffff80;
     color: #fff;
+    margin-top: 10px;
 }
 
  input[type="text"]:focus {
