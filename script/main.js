@@ -14,6 +14,7 @@ let dayWeather = [
 ];
 
 let dayTime = [
+    dayTime1 = document.getElementById("day-time-1"),
     dayTime2 = document.getElementById("day-time-2"),
     dayTime3 = document.getElementById("day-time-3"),
     dayTime4 = document.getElementById("day-time-4"),
