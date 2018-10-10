@@ -22,7 +22,7 @@ let dayTime = [
 ];
 
 let API_URL = "https://api.openweathermap.org/data/2.5/weather?q=stockholm,se&APPID=0170d2dcc35f88f82226761ce0fe0d6a";
-let API_FURL = "http://api.openweathermap.org/data/2.5/forecast?id=2673722&APPID=0170d2dcc35f88f82226761ce0fe0d6a";
+let API_FURL = "https://api.openweathermap.org/data/2.5/forecast?q=stockholm,se&APPID=0170d2dcc35f88f82226761ce0fe0d6a";
 getWeather();
 getForecast();
 
@@ -79,7 +79,9 @@ function setCity() {
     cityInput.value = "";
     searchButton.style.display = "none";
     API_URL = "https://api.openweathermap.org/data/2.5/weather?q=" + city.textContent + "&APPID=0170d2dcc35f88f82226761ce0fe0d6a";
+    API_FURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + city.textContent + "&APPID=0170d2dcc35f88f82226761ce0fe0d6a";
     getWeather();
+    getForecast();
 }
 
 function toggleSearch() {
