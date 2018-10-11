@@ -26,6 +26,17 @@ body {
     height: 50px;
 }
 
+#city {
+    margin-left: 25px;
+}
+
+#current-date {
+    margin-top: -20px;
+    text-align: center;
+    font-size: 14px;
+    color: #c1c1c1;
+}
+
 .day-weather-container {
     border-top: 1px solid #ffffff3b;
     border-bottom: 1px solid #ffffff3b;

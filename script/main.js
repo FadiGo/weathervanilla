@@ -1,6 +1,7 @@
 let currentWeather = document.getElementById("current-weather"),
     cityInput = document.getElementById("city-input"),
     city = document.getElementById("city"),
+    currentDate = document.getElementById("current-date"),
     status = document.getElementById("current-status"),
     searchButton = document.getElementById("search-button"),
     toggleButton = document.getElementById("toggle-button");
@@ -65,6 +66,7 @@ function getForecast() {
             for(var i = 0; i < 5; i++) {
                 dayWeather[i].textContent = (response.list[i].main.temp - 273.15).toFixed(1) + "°";
                 dayTime[i].textContent = response.list[i].dt_txt.slice(11, 16);
+                currentDate.textContent = response.list[0].dt_txt.slice(0,10);
             }
         })
         .catch(function (error) {
