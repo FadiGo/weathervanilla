@@ -40,14 +40,15 @@ body {
 .day-weather-container {
     border-top: 1px solid #ffffff3b;
     border-bottom: 1px solid #ffffff3b;
-    width: 97%;
+    width: 95%;
     height: 150px;
     margin-top: 75px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    
+    align-items: center;
 }
+
 .day-weather-container div {
     text-align: center;
 }
@@ -55,6 +56,23 @@ body {
 .day-weather-container p {
     margin-top: 10px;
 }
+
+.forecast-container {
+    width: 95vw;
+    height: 75px;
+}
+
+.forecast-child {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin: auto;
+    border-bottom: 1px solid #ffffff3b;
+
+}
+
+
 
 #toggle-button {
     border: 0;

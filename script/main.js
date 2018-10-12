@@ -22,6 +22,14 @@ let dayTime = [
     dayTime5 = document.getElementById("day-time-5")
 ];
 
+let forecastDate = [
+    forecastDate1 = document.getElementById("forecast-date-1"),
+    forecastDate2 = document.getElementById("forecast-date-2"),
+    forecastDate3 = document.getElementById("forecast-date-3"),
+    forecastDate4 = document.getElementById("forecast-date-4"),
+    forecastDate5 = document.getElementById("forecast-date-5")
+];
+
 let API_URL = "https://api.openweathermap.org/data/2.5/weather?q=stockholm,se&APPID=0170d2dcc35f88f82226761ce0fe0d6a";
 let API_FURL = "https://api.openweathermap.org/data/2.5/forecast?q=stockholm,se&APPID=0170d2dcc35f88f82226761ce0fe0d6a";
 getWeather();
@@ -67,6 +75,7 @@ function getForecast() {
                 dayWeather[i].textContent = (response.list[i].main.temp - 273.15).toFixed(1) + "°";
                 dayTime[i].textContent = response.list[i].dt_txt.slice(11, 16);
                 currentDate.textContent = response.list[0].dt_txt.slice(0,10);
+                forecastDate[i].textContent = response.list[i].dt_txt.slice(0, 10);
             }
         })
         .catch(function (error) {
