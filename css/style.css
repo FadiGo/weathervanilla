@@ -1,5 +1,8 @@
-html {
+html, body {
     overflow-x: hidden;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
 }
 
 body {
@@ -9,9 +12,6 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100%;
-    overflow-x: hidden;
-    width: 100%;
 }
 
 .App-header {
@@ -32,6 +32,7 @@ body {
 
 #city {
     margin-left: 25px;
+    text-align: center;
 }
 
 #current-date {
@@ -75,8 +76,6 @@ body {
     border-bottom: 1px solid #ffffff3b;
 
 }
-
-
 
 #toggle-button {
     border: 0;
@@ -134,16 +133,6 @@ input[type="text"] {
     height: 25px;
 }
 
-
-
-
-
-
-
-
-
-
-
 .sliding-background {
     height: 500px;
     width: 1260px;
@@ -153,6 +142,7 @@ input[type="text"] {
     position: absolute;
     z-index: -1;
     opacity: 0.3;
+    overflow-x: hidden;
 }
 
 
