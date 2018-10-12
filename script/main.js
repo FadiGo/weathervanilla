@@ -30,6 +30,14 @@ let forecastDate = [
     forecastDate5 = document.getElementById("forecast-date-5")
 ];
 
+let forecastWeather = [
+    forecastWeather1 = document.getElementById("forecast-weather-1"),
+    forecastWeather2 = document.getElementById("forecast-weather-2"),
+    forecastWeather3 = document.getElementById("forecast-weather-3"),
+    forecastWeather4 = document.getElementById("forecast-weather-4"),
+    forecastWeather5 = document.getElementById("forecast-weather-5")
+];
+
 let API_URL = "https://api.openweathermap.org/data/2.5/weather?q=stockholm,se&APPID=0170d2dcc35f88f82226761ce0fe0d6a";
 let API_FURL = "https://api.openweathermap.org/data/2.5/forecast?q=stockholm,se&APPID=0170d2dcc35f88f82226761ce0fe0d6a";
 getWeather();
@@ -75,8 +83,20 @@ function getForecast() {
                 dayWeather[i].textContent = (response.list[i].main.temp - 273.15).toFixed(1) + "°";
                 dayTime[i].textContent = response.list[i].dt_txt.slice(11, 16);
                 currentDate.textContent = response.list[0].dt_txt.slice(0,10);
-                forecastDate[i].textContent = response.list[i].dt_txt.slice(0, 10);
+                // forecastDate[i].textContent = response.list[???].dt_txt.slice(0, 10);
             }
+
+            forecastDate[0].textContent = response.list[8].dt_txt.slice(0, 10);
+            forecastDate[1].textContent = response.list[16].dt_txt.slice(0, 10);
+            forecastDate[2].textContent = response.list[24].dt_txt.slice(0, 10);
+            forecastDate[3].textContent = response.list[32].dt_txt.slice(0, 10);
+            forecastDate[4].textContent = response.list[39].dt_txt.slice(0, 10);
+            
+            forecastWeather[0].textContent = (response.list[8].main.temp - 273.15).toFixed(1) + "°";
+            forecastWeather[1].textContent = (response.list[16].main.temp - 273.15).toFixed(1) + "°";
+            forecastWeather[2].textContent = (response.list[24].main.temp - 273.15).toFixed(1) + "°";
+            forecastWeather[3].textContent = (response.list[32].main.temp - 273.15).toFixed(1) + "°";
+            forecastWeather[4].textContent = (response.list[39].main.temp - 273.15).toFixed(1) + "°";
         })
         .catch(function (error) {
             console.log(error);
