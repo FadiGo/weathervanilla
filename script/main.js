@@ -85,6 +85,14 @@ function getForecast() {
                 // forecastDate[i].textContent = response.list[???].dt_txt.slice(0, 10);
             }
 
+            //Noticed a problem with the API. It does not always return 40 indexes.
+            //this(39th index) is needed to show data for the fifth day.
+            //Use this to tell the user that we cannot retrieve correct data for the moment.
+            //Looking for a fix ASAP
+            if(response.list.length < 40) {
+                forecastDate[4].textContent = "No data currently available.";
+            }
+
             forecastDate[0].textContent = response.list[8].dt_txt.slice(0, 10);
             forecastDate[1].textContent = response.list[16].dt_txt.slice(0, 10);
             forecastDate[2].textContent = response.list[24].dt_txt.slice(0, 10);
