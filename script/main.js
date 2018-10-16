@@ -1,6 +1,3 @@
-let API_URL = "https://api.openweathermap.org/data/2.5/weather?q=stockholm,se&APPID=0170d2dcc35f88f82226761ce0fe0d6a";
-let API_FURL = "https://api.openweathermap.org/data/2.5/forecast?q=stockholm,se&APPID=0170d2dcc35f88f82226761ce0fe0d6a";
-
 let currentWeather = document.getElementById("current-weather"),
     cityInput = document.getElementById("city-input"),
     city = document.getElementById("city"),
@@ -40,6 +37,9 @@ let forecastWeather = [
     forecastWeather4 = document.getElementById("forecast-weather-4"),
     forecastWeather5 = document.getElementById("forecast-weather-5")
 ];
+
+let API_URL = "https://api.openweathermap.org/data/2.5/weather?q=stockholm,se&APPID=0170d2dcc35f88f82226761ce0fe0d6a";
+let API_FURL = "https://api.openweathermap.org/data/2.5/forecast?q=stockholm,se&APPID=0170d2dcc35f88f82226761ce0fe0d6a";
 
 getWeather();
 getForecast();
