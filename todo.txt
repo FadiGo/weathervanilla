@@ -1,1 +1,2 @@
-add autofocus on cityInput when clickign toggle button
+add autofocus on cityInput when clickign toggle button x
+add 5day forecast index 8, 16, 24, 32, 38

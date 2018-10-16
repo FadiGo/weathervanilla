@@ -93,7 +93,6 @@ body {
     outline: 0;
 }
 
-
 .rotate {
     transition: all 0.5s ease;
 }
@@ -145,8 +144,6 @@ input[type="text"] {
     opacity: 0.3;
     overflow-x: hidden;
 }
-
-
 
 @keyframes slide {
     0% {
